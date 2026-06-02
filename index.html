@@ -608,6 +608,65 @@
     .form-success h3 { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
     .form-success p { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
 
+    /* ── THANK YOU PAGE ── */
+    .thankyou-overlay {
+      display: none; position: fixed; inset: 0; z-index: 99999;
+      background: linear-gradient(160deg, #0a1f44 0%, #0a45ff 60%, #1a3a6e 100%);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .thankyou-overlay.active { display: flex; }
+    .thankyou-box {
+      text-align: center; max-width: 560px; width: 100%;
+      animation: tyFadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    @keyframes tyFadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .thankyou-check {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--yellow); display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 28px;
+      box-shadow: 0 0 0 16px rgba(255,209,41,0.15);
+    }
+    .thankyou-check i { font-size: 40px; color: #000; }
+    .thankyou-box h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: #fff; margin-bottom: 16px; line-height: 1.3;
+    }
+    .thankyou-box p {
+      font-size: 16px; color: rgba(255,255,255,0.78);
+      line-height: 1.8; margin-bottom: 36px;
+    }
+    .thankyou-divider {
+      width: 48px; height: 3px; background: var(--yellow);
+      border-radius: 2px; margin: 0 auto 28px;
+    }
+    .thankyou-contact {
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .thankyou-contact a {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.85); font-size: 15px;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .thankyou-contact a:hover { color: var(--yellow); }
+    .thankyou-contact i { font-size: 16px; color: var(--yellow); }
+    .thankyou-back {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--yellow); color: #000; font-weight: 700;
+      font-size: 15px; padding: 14px 32px; border-radius: 50px;
+      border: none; cursor: pointer; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(255,209,41,0.35);
+    }
+    .thankyou-back:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,209,41,0.45); }
+    .thankyou-logo {
+      margin-bottom: 36px;
+    }
+    .thankyou-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.9; }
+
     /* ── FOOTER ── */
     footer {
       background: var(--navy); color: #fff; padding: 60px 40px 20px;
@@ -718,7 +777,7 @@
     <div>
       <div class="hero-eyebrow"><i class="fa-solid fa-sparkles"></i> ยินดีต้อนรับ</div>
       <h1>ดิจิทัลแพลตฟอร์ม<br>สำหรับ<span class="blue">ธุรกิจยุคใหม่</span></h1>
-      <p class="hero-sub">ขยายธุรกิจโดยไม่ต้องใช้เงินสด แลกเปลี่ยนสินค้าและบริการกับสมาชิกกว่า 3,000 ธุรกิจทั่วประเทศ</p>
+      <p class="hero-sub">ลดค่าใช้จ่ายเงินสด โปรโมทธุรกิจไปยังลูกค้ากลุ่มใหม่ — ผ่าน Digital Trade Platform และ Community ของเจ้าของธุรกิจกว่า 3,000 รายทั่วประเทศ</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-arrow-right"></i> เริ่มต้นฟรี</button>
         <button class="btn-ghost" onclick="document.getElementById('emagazineModal').classList.add('active')"><i class="fa-solid fa-book-open"></i> ดู E-Magazine</button>
@@ -794,27 +853,27 @@
     <div class="why-left">
       <span class="section-eyebrow">ทำไมต้องเลือก Barter Connect</span>
       <h2 class="section-title">ธุรกิจที่ใช้ Barter Connect<br>เพิ่มโอกาสเติบโตให้ธุรกิจ</h2>
-      <p class="section-sub">ด้วยสมาชิกกว่า 3,000 ธุรกิจ และระบบที่ทำให้การแลกเปลี่ยนเป็นเรื่องง่าย เติบโตไม่ต้องใช้เงินสด</p>
+      <p class="section-sub">Barter Connect ไม่ใช่แค่พื้นที่แลกเปลี่ยน — คือ Community สำหรับเจ้าของกิจการที่เชื่อมทั้งธุรกิจและไลฟ์สไตล์เข้าด้วยกัน</p>
       <div class="why-points">
         <div class="why-point fade-up">
           <div class="why-point-icon"><i class="fa-solid fa-rocket"></i></div>
           <div>
-            <div class="why-point-title">เติบโตไม่ต้องใช้เงินสด</div>
-            <div class="why-point-desc">ขยายธุรกิจด้วยการแลกเปลี่ยน ไม่ต้องลงทุนเงินสดเพิ่มเติม</div>
+            <div class="why-point-title">ลดค่าใช้จ่ายเงินสด</div>
+            <div class="why-point-desc">ใช้ Trade Baht แทนเงินสดในการทำการตลาด โฆษณา และค่าใช้จ่ายธุรกิจ</div>
           </div>
         </div>
         <div class="why-point fade-up" style="transition-delay:.1s">
           <div class="why-point-icon"><i class="fa-solid fa-users"></i></div>
           <div>
-            <div class="why-point-title">สมาชิกธุรกิจทั่วประเทศ</div>
-            <div class="why-point-desc">เชื่อมต่อกับ 3,000+ ธุรกิจ ได้ลูกค้าใหม่อย่างต่อเนื่อง</div>
+            <div class="why-point-title">เข้าถึงโอกาสและลูกค้าใหม่</div>
+            <div class="why-point-desc">SME เข้าถึงตลาดใหม่และโปรโมทธุรกิจไปยังสมาชิก 3,000+ รายทันที</div>
           </div>
         </div>
         <div class="why-point fade-up" style="transition-delay:.3s">
           <div class="why-point-icon"><i class="fa-solid fa-headset"></i></div>
           <div>
-            <div class="why-point-title">สนับสนุนจากทีมมืออาชีพ</div>
-            <div class="why-point-desc">ทีมงานที่มีประสบการณ์ 29 ปี พร้อมช่วยเหลือตลอดเวลา</div>
+            <div class="why-point-title">Community ธุรกิจและไลฟ์สไตล์</div>
+            <div class="why-point-desc">มากกว่าพื้นที่แลกเปลี่ยน — คือ Community ที่เชื่อมเจ้าของกิจการทุกด้านเข้าด้วยกัน</div>
           </div>
         </div>
       </div>
@@ -832,7 +891,7 @@
     <div style="text-align:center;margin-bottom:48px;" class="fade-up">
       <span class="section-eyebrow">กิจกรรม Networking</span>
       <h2 class="section-title">ต่อยอดธุรกิจกับกิจกรรม<br>Networking ตลอดทั้งปี</h2>
-      <p class="section-sub">พบปะกับเจ้าของธุรกิจกว่า 3,000 ธุรกิจ ภายในงาน Networking<br>ที่ทาง Barter Connect จัดให้ตลอดทั้งปี</p>
+      <p class="section-sub">มากกว่างาน Networking — คือ Community ของเจ้าของกิจการที่เชื่อมทั้งธุรกิจและไลฟ์สไตล์เข้าด้วยกัน<br>กับสมาชิกกว่า 3,000 ธุรกิจทั่วประเทศ ตลอดทั้งปี</p>
     </div>
     <div class="events-carousel-outer">
       <button class="events-arrow-btn" id="eventsSliderPrev" aria-label="ก่อนหน้า"><i class="fa-solid fa-chevron-left"></i></button>
@@ -969,8 +1028,8 @@
         <img src="./Barter_Exclusive%20luncheon%202026%20(708).jpg" alt="Barter Connect Exclusive Top Trader Luncheon 2026" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;">
       </div>
       <span class="section-eyebrow" style="text-align:left">ปรึกษาฟรี ไม่มีค่าใช้จ่าย</span>
-      <h2 class="section-title" style="text-align:left;font-size:clamp(1.7rem,2.8vw,2.6rem);margin-bottom:16px">อยากรู้ว่าธุรกิจคุณ<br>แลกเปลี่ยนได้อะไรบ้าง?</h2>
-      <p class="section-sub" style="text-align:left;margin:0 0 28px;font-size:16px">กรอกข้อมูลด้านขวา ทีมงานของเราจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+      <h2 class="section-title" style="text-align:left;font-size:clamp(1.7rem,2.8vw,2.6rem);margin-bottom:16px">ธุรกิจของคุณพร้อมเติบโต<br>โดยไม่ต้องใช้เงินสดเพิ่มแล้วหรือยัง?</h2>
+      <p class="section-sub" style="text-align:left;margin:0 0 28px;font-size:16px">ปรึกษาผู้เชี่ยวชาญฟรี เราจะช่วยวิเคราะห์ว่าธุรกิจของคุณสามารถลดค่าใช้จ่ายและเข้าถึงโอกาสใหม่ผ่าน Barter Connect ได้อย่างไร</p>
       <div class="lead-checks">
         <div class="lead-check"><div class="lead-check-icon"><i class="fa-solid fa-check"></i></div><span>วิเคราะห์ธุรกิจเบื้องต้นฟรี</span></div>
         <div class="lead-check"><div class="lead-check-icon"><i class="fa-solid fa-check"></i></div><span>ประเมินมูลค่าสินค้า/บริการที่แลกได้</span></div>
@@ -988,10 +1047,7 @@
         <div class="form-title">นัดปรึกษาฟรี</div>
         <div class="form-subtitle">กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</div>
         <form id="leadForm" onsubmit="submitForm(event)">
-          <div class="form-row">
-            <div class="form-group"><label class="form-label">ชื่อ <span class="req">*</span></label><input type="text" class="form-input" id="f_firstname" placeholder="ชื่อของคุณ" required /></div>
-            <div class="form-group"><label class="form-label">นามสกุล <span class="req">*</span></label><input type="text" class="form-input" id="f_lastname" placeholder="นามสกุลของคุณ" required /></div>
-          </div>
+          <div class="form-group"><label class="form-label">ชื่อ <span class="req">*</span></label><input type="text" class="form-input" id="f_firstname" placeholder="ชื่อของคุณ" required /></div>
           <div class="form-group"><label class="form-label">เบอร์โทรศัพท์ <span class="req">*</span></label><input type="tel" class="form-input" id="f_phone" placeholder="08X-XXX-XXXX" required /></div>
           <div class="form-group"><label class="form-label">อีเมล</label><input type="email" class="form-input" id="f_email" placeholder="your@email.com" /></div>
           <div class="form-group"><label class="form-label">ชื่อบริษัท / ร้านค้า <span class="req">*</span></label><input type="text" class="form-input" id="f_company" placeholder="ชื่อธุรกิจของคุณ" required /></div>
@@ -1011,8 +1067,18 @@
               <option>อื่นๆ</option>
             </select>
           </div>
-          <div class="form-group"><label class="form-label">สินค้า/บริการที่ต้องการแลกเปลี่ยน</label><textarea class="form-textarea" id="f_product" rows="3" placeholder="เช่น มีห้องว่าง 5 ห้อง/เดือน, บริการออกแบบกราฟิก, อาหาร Catering..."></textarea></div>
-          <button type="submit" class="form-submit"><i class="fa-solid fa-paper-plane"></i> นัดปรึกษาฟรี ไม่มีค่าใช้จ่าย</button>
+          <div class="form-group">
+            <label class="form-label">จังหวัด / พื้นที่</label>
+            <select class="form-select" id="f_province">
+              <option value="">-- เลือกจังหวัด (ถ้ามี) --</option>
+              <option>กรุงเทพและปริมณฑล</option>
+              <option>เชียงใหม่</option>
+              <option>ชลบุรี</option>
+              <option>ภูเก็ต</option>
+              <option>อื่นๆ</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn" disabled><i class="fa-solid fa-paper-plane"></i> นัดปรึกษาฟรี ไม่มีค่าใช้จ่าย</button>
           <p class="form-note"><i class="fa-solid fa-lock"></i> ข้อมูลของคุณปลอดภัย 100% ไม่มีการเผยแพร่</p>
         </form>
         <div class="form-success" id="formSuccess">
@@ -1151,22 +1217,30 @@
   })();
 
   // ⚙️ Google Apps Script URL
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzenyacVXkiWe_OlRzsPaDu-3_M32M-I-lOAgmKHvGhezpbnvlo8M2MHFvWJDpNzIg/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyu5Qec9JZtKDGdeoIRZBsW48CMKRWRsCpCv16g4o5oTnmVWLBC5T-zde5sxRfKyuSB/exec';
 
   function submitForm(e) {
     e.preventDefault();
+
+    const firstname = document.getElementById('f_firstname').value.trim();
+    const phone     = document.getElementById('f_phone').value.trim();
+    const company   = document.getElementById('f_company').value.trim();
+    if (!firstname || !phone || !company) {
+      alert('กรุณากรอก ชื่อ, เบอร์โทรศัพท์ และชื่อธุรกิจ ให้ครบก่อนส่ง');
+      return;
+    }
+
     const btn = document.querySelector('.form-submit');
     btn.disabled = true;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังส่งข้อมูล...';
 
     const data = {
       firstname: document.getElementById('f_firstname').value,
-      lastname:  document.getElementById('f_lastname').value,
       phone:     document.getElementById('f_phone').value,
       email:     document.getElementById('f_email').value,
       company:   document.getElementById('f_company').value,
       biztype:   document.getElementById('f_biztype').value,
-      product:   document.getElementById('f_product').value
+      province:  document.getElementById('f_province').value,
     };
 
     if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
@@ -1183,11 +1257,30 @@
       _lt('send', 'cv', { type: 'Conversion' }, ['0536b12a-d664-40ed-a231-a8b562dc15f1']);
     }
 
+    // Facebook Pixel Lead — ยิงเมื่อลูกค้ากรอก lead สำเร็จ
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
+
     setTimeout(() => {
       document.getElementById('leadForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('thankyouOverlay').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 800);
   }
+
+  (function() {
+    const btn = document.getElementById('submitBtn');
+    const required = ['f_firstname', 'f_phone', 'f_company', 'f_biztype'];
+    function checkForm() {
+      const allFilled = required.every(id => document.getElementById(id).value.trim() !== '');
+      btn.disabled = !allFilled;
+    }
+    required.forEach(id => document.getElementById(id).addEventListener('input', checkForm));
+    document.getElementById('f_biztype').addEventListener('change', checkForm);
+    document.getElementById('f_province').addEventListener('change', checkForm);
+  })();
 
   // Hamburger menu
   (function() {
@@ -1374,5 +1467,24 @@
     })();
   });
 </script>
+<!-- ── THANK YOU PAGE ── -->
+<div class="thankyou-overlay" id="thankyouOverlay">
+  <div class="thankyou-box">
+    <div class="thankyou-check">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h1>ขอบคุณที่ให้ความสนใจ<br>Barter Connect!</h1>
+    <div class="thankyou-divider"></div>
+    <p>ทีมงานของเราได้รับข้อมูลของคุณแล้ว<br>และจะติดต่อกลับภายใน <strong style="color:#fff;">24 ชั่วโมง</strong> เพื่อนัดปรึกษาฟรี</p>
+    <div class="thankyou-contact">
+      <a href="tel:020241000"><i class="fa-solid fa-phone"></i> 02-024-1000</a>
+      <a href="https://line.me/ti/p/~@barterconnect" target="_blank" rel="noopener"><i class="fa-brands fa-line"></i> @barterconnect</a>
+      <a href="https://www.barterconnect.com" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> barterconnect.com</a>
+    </div>
+    <button class="thankyou-back" onclick="document.getElementById('thankyouOverlay').classList.remove('active')">
+      <i class="fa-solid fa-arrow-left"></i> กลับสู่หน้าหลัก
+    </button>
+  </div>
+</div>
 </body>
 </html>
