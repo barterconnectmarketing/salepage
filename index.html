@@ -89,8 +89,7 @@
     /* ── NAVBAR ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(20px);
+      background: #fff;
       border-bottom: 1px solid rgba(0,0,0,0.06);
       height: 80px; display: flex; align-items: center;
       justify-content: space-between; padding: 0 40px;
@@ -118,22 +117,27 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(160deg, #f0f5ff 0%, #e8f0fe 30%, #f7f9fc 70%, #fff 100%);
+      background: url('./hero-bg.png') center right / cover no-repeat;
       display: flex; align-items: center;
-      padding: 110px 40px 60px;
+      padding: 110px 40px 60px 80px;
       position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -150px; right: -150px;
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,110,245,0.07) 0%, transparent 70%);
-      pointer-events: none;
     }
     .hero-inner {
       max-width: 1500px; margin: 0 auto; width: 100%;
       display: grid; grid-template-columns: 1fr 1.8fr;
       gap: 60px; align-items: center; position: relative; z-index: 1;
     }
+    .hero h1 { color: #fff; }
+    .hero h1 .blue { color: #fff; }
+    .hero-sub { color: rgba(255,255,255,0.85) !important; }
+    .hero-trust-item span { color: rgba(255,255,255,0.8) !important; }
+    .hero-trust-item i { color: #4ade80 !important; }
+    .hero .hero-eyebrow { background: rgba(255,255,255,0.15); color: #fff; }
+    .hero .btn-primary { background: #FFD129; color: #111; box-shadow: 0 4px 24px rgba(255,209,41,0.35); }
+    .hero .btn-primary:hover { background: #f5c800; }
+    .hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .hero .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+    .phone-scene { display: none !important; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--blue-light); color: var(--blue);
@@ -142,10 +146,10 @@
     }
     .hero h1 {
       font-size: clamp(2.4rem, 4vw, 3.8rem);
-      font-weight: 700; color: var(--gray-900);
+      font-weight: 700; color: #fff;
       line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 20px;
     }
-    .hero h1 .blue { color: var(--blue); }
+    .hero h1 .blue { color: #fff; }
     .hero-sub { font-size: 18px; color: var(--gray-500); line-height: 1.7; margin-bottom: 36px; }
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
     .btn-primary {
@@ -712,6 +716,7 @@
       .nav-hamburger { display: flex; }
       .nav-links { display: none; }
       .hero { padding: 90px 20px 48px; }
+      .hero::before { content: ''; position: absolute; inset: 0; background: rgba(5,15,60,0.6); pointer-events: none; }
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .phone-scene { width: 100%; }
       .phone-scene img { width: 100% !important; max-width: 100% !important; }
@@ -754,8 +759,8 @@
   </a>
   <div class="nav-links">
     <a href="#how-it-works">วิธีการทำงาน</a>
-    <a href="#features">ฟีเจอร์</a>
-    <a href="#cases">ตัวอย่างการแลกเปลี่ยน</a>
+    <a href="#why-us">ฟีเจอร์</a>
+    <a href="#events">ตัวอย่างการแลกเปลี่ยน</a>
     <a href="#testimonials">รีวิวจากสมาชิก</a>
   </div>
   <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">นัดปรึกษาฟรี</button>
@@ -765,8 +770,8 @@
 </nav>
 <div class="nav-mobile" id="nav-mobile">
   <a href="#how-it-works" onclick="closeMobileNav()">วิธีการทำงาน</a>
-  <a href="#features" onclick="closeMobileNav()">ฟีเจอร์</a>
-  <a href="#cases" onclick="closeMobileNav()">ตัวอย่างการแลกเปลี่ยน</a>
+  <a href="#why-us" onclick="closeMobileNav()">ฟีเจอร์</a>
+  <a href="#events" onclick="closeMobileNav()">ตัวอย่างการแลกเปลี่ยน</a>
   <a href="#testimonials" onclick="closeMobileNav()">รีวิวจากสมาชิก</a>
   <button class="nav-mobile-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});closeMobileNav()">นัดปรึกษาฟรี</button>
 </div>
@@ -775,17 +780,17 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow"><i class="fa-solid fa-sparkles"></i> ยินดีต้อนรับ</div>
-      <h1>ดิจิทัลแพลตฟอร์ม<br>สำหรับ<span class="blue">ธุรกิจยุคใหม่</span></h1>
-      <p class="hero-sub">ลดค่าใช้จ่ายเงินสด โปรโมทธุรกิจไปยังลูกค้ากลุ่มใหม่ — ผ่าน Digital Trade Platform และ Community ของเจ้าของธุรกิจกว่า 3,000 รายทั่วประเทศ</p>
+      <div class="hero-eyebrow"><i class="fa-solid fa-sparkles"></i> ใช้โดย 3,000+ ธุรกิจทั่วประเทศ</div>
+      <h1>จ่ายน้อยลง<br><span class="blue">ได้ลูกค้ามากขึ้น</span></h1>
+      <p class="hero-sub">เปลี่ยนสินค้า บริการ หรือกำลังการผลิตที่ยังเหลืออยู่ ให้กลายเป็นโอกาสทางธุรกิจผ่าน Community Barter Network ที่ใหญ่ที่สุดแห่งหนึ่งของไทย</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-arrow-right"></i> เริ่มต้นฟรี</button>
+        <button class="btn-primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-arrow-right"></i> ขอรับคำปรึกษาฟรี</button>
         <button class="btn-ghost" onclick="document.getElementById('emagazineModal').classList.add('active')"><i class="fa-solid fa-book-open"></i> ดู E-Magazine</button>
       </div>
       <div class="hero-trust">
-        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>ฟรี ไม่มีค่าใช้จ่ายในการปรึกษา</span></div>
-        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>ตอบกลับภายใน 24 ชั่วโมง</span></div>
-        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>ไม่มีข้อผูกมัด</span></div>
+        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>ปรึกษาฟรี ไม่มีข้อผูกมัด</span></div>
+        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>ทีมงานติดต่อกลับใน 24 ชม.</span></div>
+        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i><span>เข้าร่วมแล้วกว่า 3,000 ธุรกิจ</span></div>
       </div>
     </div>
     <div class="phone-scene" style="display:flex;justify-content:center;align-items:center;">
@@ -808,8 +813,8 @@
   <div class="section-inner">
     <div class="fade-up">
       <span class="section-eyebrow">วิธีการทำงาน</span>
-      <h2 class="section-title">เพียง 3 ขั้นตอน เพิ่มลูกค้าใหม่<br>ลดค่าใช้จ่ายได้ทันที</h2>
-      <p class="section-sub">ระบบที่เรียบง่าย ใช้งานได้จริง</p>
+      <h2 class="section-title">3 ขั้นตอน<br>เริ่มประหยัดเงินสดได้ทันที</h2>
+      <p class="section-sub">ไม่ต้องลงทุนเพิ่ม ไม่ต้องรอนาน — เริ่มแลกเปลี่ยนได้ทันทีหลังสมัคร</p>
     </div>
     <div class="how-new-layout fade-up">
       <!-- LEFT: single image -->
@@ -852,8 +857,8 @@
   <div class="why-inner">
     <div class="why-left">
       <span class="section-eyebrow">ทำไมต้องเลือก Barter Connect</span>
-      <h2 class="section-title">ธุรกิจที่ใช้ Barter Connect<br>เพิ่มโอกาสเติบโตให้ธุรกิจ</h2>
-      <p class="section-sub">Barter Connect ไม่ใช่แค่พื้นที่แลกเปลี่ยน — คือ Community สำหรับเจ้าของกิจการที่เชื่อมทั้งธุรกิจและไลฟ์สไตล์เข้าด้วยกัน</p>
+      <h2 class="section-title">มีต้นทุน แต่ขาดลูกค้า<br>เราช่วยได้</h2>
+      <p class="section-sub">ร้านอาหาร โรงแรม สำนักงาน และธุรกิจบริการ ต้องแบกต้นทุนพนักงาน ค่าเช่า สต็อก ทุกเดือน ไม่ว่าลูกค้าจะมาหรือไม่<br>Barter Connect เปลี่ยนทรัพยากรที่คุณมีอยู่แล้ว ให้กลายเป็นลูกค้า บริการ และโอกาสใหม่ — โดยไม่ต้องจ่ายเงินสดเพิ่ม</p>
       <div class="why-points">
         <div class="why-point fade-up">
           <div class="why-point-icon"><i class="fa-solid fa-rocket"></i></div>
@@ -890,8 +895,8 @@
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px;" class="fade-up">
       <span class="section-eyebrow">กิจกรรม Networking</span>
-      <h2 class="section-title">ต่อยอดธุรกิจกับกิจกรรม<br>Networking ตลอดทั้งปี</h2>
-      <p class="section-sub">มากกว่างาน Networking — คือ Community ของเจ้าของกิจการที่เชื่อมทั้งธุรกิจและไลฟ์สไตล์เข้าด้วยกัน<br>กับสมาชิกกว่า 3,000 ธุรกิจทั่วประเทศ ตลอดทั้งปี</p>
+      <h2 class="section-title">เจอลูกค้าใหม่จริง ๆ<br>ไม่ใช่แค่แลกนามบัตร</h2>
+      <p class="section-sub">กิจกรรม Exclusive ตลอดทั้งปี เฉพาะสมาชิก Barter Connect<br>พบเจ้าของธุรกิจจริงกว่า 3,000 ราย ที่พร้อมซื้อ พร้อมแลก พร้อมร่วมมือ</p>
     </div>
     <div class="events-carousel-outer">
       <button class="events-arrow-btn" id="eventsSliderPrev" aria-label="ก่อนหน้า"><i class="fa-solid fa-chevron-left"></i></button>
@@ -921,8 +926,8 @@
   <div class="section-inner">
     <div class="fade-up" style="text-align:center;margin-bottom:40px;">
       <span class="section-eyebrow">เสียงจากสมาชิก</span>
-      <h2 class="section-title">ความสำเร็จที่วัดได้<br>จากธุรกิจจริง</h2>
-      <p class="section-sub">ธุรกิจจริงกว่า 3,000 ราย ที่เลือกใช้ Barter Connect เพื่อเติบโต</p>
+      <h2 class="section-title">สมาชิกบอกว่า Barter Connect<br>เปลี่ยนธุรกิจพวกเขาอย่างไร</h2>
+      <p class="section-sub">3,000+ ธุรกิจ • ใช้งานจริงมากกว่า 5 ปี</p>
     </div>
     <div class="testi-slider-wrapper">
       <button class="testi-btn" id="testiSliderPrev" aria-label="ก่อนหน้า"><i class="fa-solid fa-chevron-left"></i></button>
@@ -1028,8 +1033,8 @@
         <img src="./Barter_Exclusive%20luncheon%202026%20(708).jpg" alt="Barter Connect Exclusive Top Trader Luncheon 2026" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;">
       </div>
       <span class="section-eyebrow" style="text-align:left">ปรึกษาฟรี ไม่มีค่าใช้จ่าย</span>
-      <h2 class="section-title" style="text-align:left;font-size:clamp(1.7rem,2.8vw,2.6rem);margin-bottom:16px">ธุรกิจของคุณพร้อมเติบโต<br>โดยไม่ต้องใช้เงินสดเพิ่มแล้วหรือยัง?</h2>
-      <p class="section-sub" style="text-align:left;margin:0 0 28px;font-size:16px">ปรึกษาผู้เชี่ยวชาญฟรี เราจะช่วยวิเคราะห์ว่าธุรกิจของคุณสามารถลดค่าใช้จ่ายและเข้าถึงโอกาสใหม่ผ่าน Barter Connect ได้อย่างไร</p>
+      <h2 class="section-title" style="text-align:left;font-size:clamp(1.7rem,2.8vw,2.6rem);margin-bottom:16px">รู้เลยใน 30 นาที<br>ธุรกิจคุณประหยัดเงินสดได้เดือนละเท่าไหร่</h2>
+      <p class="section-sub" style="text-align:left;margin:0 0 28px;font-size:16px">ที่ปรึกษาของเราจะวิเคราะห์ธุรกิจคุณฟรี และบอกได้ทันทีว่าคุณสามารถลดค่าใช้จ่ายเงินสด หรือเพิ่มลูกค้าได้อีกเดือนละเท่าไหร่ — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด</p>
       <div class="lead-checks">
         <div class="lead-check"><div class="lead-check-icon"><i class="fa-solid fa-check"></i></div><span>วิเคราะห์ธุรกิจเบื้องต้นฟรี</span></div>
         <div class="lead-check"><div class="lead-check-icon"><i class="fa-solid fa-check"></i></div><span>ประเมินมูลค่าสินค้า/บริการที่แลกได้</span></div>
@@ -1044,12 +1049,11 @@
     </div>
     <div>
       <div class="lead-form-card">
-        <div class="form-title">นัดปรึกษาฟรี</div>
-        <div class="form-subtitle">กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</div>
+        <div class="form-title">นัด 30 นาที — ฟรีทุกอย่าง</div>
+        <div class="form-subtitle">กรอกข้อมูล ทีมงานโทรกลับภายใน 24 ชม.</div>
         <form id="leadForm" onsubmit="submitForm(event)">
           <div class="form-group"><label class="form-label">ชื่อ <span class="req">*</span></label><input type="text" class="form-input" id="f_firstname" placeholder="ชื่อของคุณ" required /></div>
           <div class="form-group"><label class="form-label">เบอร์โทรศัพท์ <span class="req">*</span></label><input type="tel" class="form-input" id="f_phone" placeholder="08X-XXX-XXXX" required /></div>
-          <div class="form-group"><label class="form-label">อีเมล</label><input type="email" class="form-input" id="f_email" placeholder="your@email.com" /></div>
           <div class="form-group"><label class="form-label">ชื่อบริษัท / ร้านค้า <span class="req">*</span></label><input type="text" class="form-input" id="f_company" placeholder="ชื่อธุรกิจของคุณ" required /></div>
           <div class="form-group">
             <label class="form-label">ประเภทธุรกิจ <span class="req">*</span></label>
@@ -1078,7 +1082,7 @@
               <option>อื่นๆ</option>
             </select>
           </div>
-          <button type="submit" class="form-submit" id="submitBtn" disabled><i class="fa-solid fa-paper-plane"></i> นัดปรึกษาฟรี ไม่มีค่าใช้จ่าย</button>
+          <button type="submit" class="form-submit" id="submitBtn" disabled><i class="fa-solid fa-paper-plane"></i> ขอรับคำปรึกษาฟรี →</button>
           <p class="form-note"><i class="fa-solid fa-lock"></i> ข้อมูลของคุณปลอดภัย 100% ไม่มีการเผยแพร่</p>
         </form>
         <div class="form-success" id="formSuccess">
@@ -1237,7 +1241,6 @@
     const data = {
       firstname: document.getElementById('f_firstname').value,
       phone:     document.getElementById('f_phone').value,
-      email:     document.getElementById('f_email').value,
       company:   document.getElementById('f_company').value,
       biztype:   document.getElementById('f_biztype').value,
       province:  document.getElementById('f_province').value,
